@@ -43,3 +43,54 @@ margin-right: 10px;
 img.dibley {
     max-width: 100%
 }
+
+/* Grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "one one"
+    "two three"
+    "four five"
+    "six six";
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+/* Boxes */
+.one {
+  grid-area: one;
+  background: #a33;
+  color: #fff;
+  padding: 20px;
+}
+
+.two {
+  grid-area: two;
+  background: #f2e394;
+  padding: 20px;
+}
+
+.three {
+  grid-area: three;
+  background: #82af82;
+  padding: 20px;
+}
+
+.four {
+  grid-area: four;
+  background: #add8e6;
+  padding: 20px;
+}
+
+.five {
+  grid-area: five;
+  background: #6a5acd;
+  color: #fff;
+  padding: 20px;
+}
+
+.six {
+  grid-area: six;
+  background: #ff69b4;
+  padding: 20px;
+}
