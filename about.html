@@ -5,78 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Nguyen Luu: 225</title>
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/starter-template/">
-   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-
-    <!-- React and ReactDOM -->
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-</head>
+    <title>Luu Nguyen: Home</title>
     
+    <!-- Bootstrap 4.6 CSS (consistent version) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
 <body>
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Luu Nguyen</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-       
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-          <li class="nav-item"><a class="nav-link" href="grid.html">Grid</a></li>
-          <li class="nav-item"><a class="nav-link" href="components.html">Carousel</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Luu Nguyen</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" 
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="grid.html">Grid</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="components.html">Carousel</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
+    <main role="main" class="container-fluid pt-5 mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <div id="react-header"></div>
+                <div id="react-photo" class="my-4"></div>
+                <div id="react-paragraph"></div>
+            </div>
+        </div>
+    </main>
 
-  <main role="main" class="container text-center" style="margin-top: 100px;">
-    <div id="react-header" class="mb-4"></div>
-    <div id="react-photo" class="mb-3"></div>
-    <div id="react-paragraph" class="px-3"></div>
-  </main>
+    <!-- React -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     
     <script type="text/javascript">
-  const user = {
-    name: "Luu Nguyen",
-    image: "images/cat.jpg",
-    about: "I’m a freelance graphic designer and photographer based in California, USA. I’m passionate about turning ideas into visually engaging designs that tell a story and connect with people. I love tackling creative challenges—whether it’s developing brand visuals, crafting digital artwork, or capturing the perfect shot through my lens. Over time, I’ve grown increasingly interested in how design and technology intersect, and I’m always learning new ways to bring creative ideas to life on the web. For me, design isn’t just about making things look good—it’s about making them work beautifully and meaningfully."
-  };
+        const user = {
+            name: "Luu Nguyen",
+            image: "https://via.placeholder.com/200x200/4a90e2/ffffff?text=Cat", // WORKING PLACEHOLDER
+            about: "I’m a freelance graphic designer and photographer based in California, USA. I’m passionate about turning ideas into visually engaging designs that tell a story and connect with people. I love tackling creative challenges—whether it’s developing brand visuals, crafting digital artwork, or capturing the perfect shot through my lens. Over time, I’ve grown increasingly interested in how design and technology intersect, and I’m always learning new ways to bring creative ideas to life on the web. For me, design isn’t just about making things look good—it’s about making them work beautifully and meaningfully."
+        };
 
-    // Create React elements
-    const header = React.createElement('h1', { className: 'display-5 fw-bold' }, `About ${user.name}`);
-    const photo = React.createElement('img', {
-      src: user.image,
-      alt: `${user.name}'s photo`,
-      width: 200,('p', { className: 'lead mt-3' }, user.about);
+        // FIXED: Proper template literals with backticks
+        const header = React.createElement('h1', null, `About ${user.name}`);
+        const photo = React.createElement('img', { 
+            src: user.image, 
+            alt: `${user.name}'s photo`, 
+            width: 200, 
+            height: 200,
+            className: "rounded-circle img-fluid"
+        });
+        const paragraph = React.createElement('p', { className: "lead" }, user.about);
 
-      height: 200,
-      className: 'rounded-circle shadow-sm'
-    });
-  const paragraph = React.createElement('p', { className: 'lead mt-3' }, user.about);
+        // Render them
+        ReactDOM.render(header, document.getElementById('react-header'));
+        ReactDOM.render(photo, document.getElementById('react-photo'));
+        ReactDOM.render(paragraph, document.getElementById('react-paragraph'));
+    </script>
 
-  // Render them into the HTML
-  ReactDOM.render(header, document.getElementById('react-header'));
-  ReactDOM.render(photo, document.getElementById('react-photo'));
-  ReactDOM.render(paragraph, document.getElementById('react-paragraph'));
-</script>
-
- <!-- Bootstrap Bundle (includes Popper) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <!-- Bootstrap 4.6 JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
