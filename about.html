@@ -48,20 +48,28 @@
     <div id="img"></div>
     <div id="content"></div>
 
-    <script>
-        const user = {
-            name: '',
-            imageUrl: '',
-            bio: ''
-        };
+    <script type="text/javascript">
+  const user = {
+    name: "Luu Nguyen",
+    image: "images/cat.jpg",
+    about: "I'm a freelance graphic designer and photographer based in California,USA. I love solving design challenges and learning how to make creative ideas work on the web."
+  };
 
-        // Step one - Create a React element
+  // Create React elements
+  const header = React.createElement('h1', null, `About ${user.name}`);
+  const photo = React.createElement('img', { 
+    src: user.image, 
+    alt: `${user.name}'s photo`, 
+    width: 200, 
+    height: 200 
+  });
+  const paragraph = React.createElement('p', null, user.about);
 
-        // Step 2: Render the React element
-
-    </script>
-
-</main><!-- /.container -->
+  // Render them into the HTML
+  ReactDOM.render(header, document.getElementById('react-header'));
+  ReactDOM.render(photo, document.getElementById('react-photo'));
+  ReactDOM.render(paragraph, document.getElementById('react-paragraph'));
+</script>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
