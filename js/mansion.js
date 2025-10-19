@@ -48,6 +48,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const backToTop = document.createElement("button");
   backToTop.textContent = "↑";
   backToTop.id = "backToTop";
+  backToTop.setAttribute("aria-label", "Back to top");
+  backToTop.setAttribute("title", "Back to top");
+  backToTop.tabIndex = 0;
   document.body.appendChild(backToTop);
 
   backToTop.style.position = "fixed";
@@ -63,12 +66,21 @@ document.addEventListener("DOMContentLoaded", function () {
   backToTop.style.display = "none";
   backToTop.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
   backToTop.style.transition = "all 0.3s ease";
+  
 
   window.addEventListener("scroll", function () {
     backToTop.style.display = window.scrollY > 300 ? "block" : "none";
   });
-
-  backToTop.addEventListener("click", function () {
+  // Click to scroll to top
+  backToTop.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Keyboard accessibility
+  backToTop.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   });
 });
