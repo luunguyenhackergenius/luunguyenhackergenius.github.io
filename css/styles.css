@@ -1,6 +1,12 @@
 /* ===============================
    Mansion Style
    =============================== */
+.home_2col img {
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
 
 body {
   background-color: #f8f9fa;
@@ -131,10 +137,6 @@ footer p {
   .carousel img {
     height: 360px;
   }
-
-  main p {
-    font-size: 1rem;
-  }
 }
 
 /* For small mobile devices */
@@ -145,3 +147,70 @@ footer p {
 
   main {
     padding: 1rem;
+  }
+}
+
+/* =============================== */
+/* ===============================
+   CSS Grid Practice Layout
+   =============================== */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 90%;
+  max-width: 900px;
+  margin: 100px auto; /* adds spacing below navbar */
+}
+
+.grid-container > div {
+  padding: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #212529;
+  border-radius: 8px;
+}
+
+/* Layout positions based on assignment image */
+.one {
+  grid-column: 1 / 4; /* spans all three columns */
+  background-color: #d36b77;
+}
+
+.two {
+  grid-column: 1 / 2;
+  background-color: #f8e9a1;
+}
+
+.three {
+  grid-column: 2 / 4;
+  background-color: #b8e0d2;
+}
+
+.four {
+  grid-column: 2 / 3;
+  background-color: #a2d2ff;
+}
+
+.five {
+  grid-column: 3 / 4;
+  background-color: #8e8ee0;
+}
+
+.six {
+  grid-column: 1 / 4;
+  background-color: #e5989b;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-container > div {
+    grid-column: auto;
+  }
+}
