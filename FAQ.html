@@ -3,74 +3,127 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery: Mansion</title>
-  <link rel="icon" type="image/png" href="images/favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
 
+  <title>FAQ: Architecture Insights | Luu Nguyen</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body>
- <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="index.html">Luu Nguyen</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<body class="d-flex flex-column min-vh-100">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">Luu Nguyen</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
-        <li class="nav-item"><a class="nav-link" href="grid.html">Grid</a></li>
-        <li class="nav-item"><a class="nav-link" href="carousel.html">Carousel</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Main Content -->
   <main class="container my-5">
-    <h1 class="text-center mb-4">Photography Gallery</h1>
-    <p class="text-center">Explore a curated selection of my favorite landscape and street photography. Each photo captures a story through light, contrast, and composition.</p>
+    <h1 class="text-center mb-4">Frequently Asked Questions</h1>
+    <p class="text-center lead mb-5">
+      Learn more about the creative process, design philosophy, and approach behind architectural photography and visualization.
+    </p>
 
-    <!-- Bootstrap Carousel -->
-    <div id="galleryCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="images/photo1.jpg" class="d-block w-100 rounded" alt="Catholic Stylic">
-        </div>
-        <div class="carousel-item">
-          <img src="images/photo2.jpg" class="d-block w-100 rounded" alt="Classic">
-        </div>
-        <div class="carousel-item">
-          <img src="images/photo3.jpg" class="d-block w-100 rounded" alt="Modern">
+    <!-- FAQ Section -->
+    <div class="accordion" id="faqAccordion">
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            What inspires your architectural photography?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            My inspiration often comes from geometry, light, and the rhythm of structures. I enjoy capturing how architecture interacts with its environment—whether it’s the sharp angles of modern design or the organic flow of historical buildings.
+          </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
-    </div>
 
-    <h2 class="mt-5">Behind the Lens</h2>
-    <p>Photography is more than just capturing an image—it’s about framing emotion, color, and perspective. Through my lens, I aim to transform ordinary moments into visual stories that inspire reflection and appreciation.</p>
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            How do you choose which architectural projects to photograph?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            I focus on projects that tell a story—spaces that reflect innovation, purpose, and harmony. Whether it’s a minimal modern structure or a restored heritage building, I look for design that balances creativity with function.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What equipment do you use for architectural photography?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            I use a full-frame DSLR with a tilt-shift lens to correct perspective distortion, along with a sturdy tripod and natural lighting whenever possible. Post-processing tools like Lightroom and Photoshop help refine tones and symmetry.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            Do you collaborate with architects or designers on shoots?
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, collaboration is key. I often work closely with architects and interior designers to understand the vision behind their projects, ensuring each photograph highlights the intended mood, scale, and spatial relationship.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            How can clients request a photography session for their building or design project?
+          </button>
+        </h2>
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Clients can contact me directly via the contact form on my website or by email. I typically schedule a consultation to discuss project details, preferred lighting conditions, and desired outcomes before the shoot.
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Footer -->
-  <footer class="text-center py-4 bg-dark text-light">
-    <p>© 2025 Luu Nguyen | Designed with Bootstrap 5</p>
+  <footer class="text-center py-4 bg-dark text-light mt-auto">
+    <p class="mb-0">© 2025 Luu Nguyen | Designed with Bootstrap 5</p>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
